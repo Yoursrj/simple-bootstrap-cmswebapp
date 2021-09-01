@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css\style.css">
+
+    <title>employees-list</title>
+  </head>
+    
+  <!-- <nav> -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="dash.html">HI, RITURAJ</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link " aria-current="page" href="employees-list.html">Employees</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="jobs_list.html">Jobs</a>
+              </li>
+            
+              
+            </ul>
+            <form class="d-flex">
+                <div class="input-group ">
+                    <input type="search" class="form-control form-cntrol sm" placeholder="SEARCH...." aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <button class="btn btn-sm btn-success" type="submit" id="button-addon2"><i class="fa fa-search"></i></button>
+                  </div>
+            </form>
+            <a href="#" class="ml-3 btn btn-sm btn-warning">Log Out</a>
+          </div>
+        </div>
+      </nav>
+
+  <!-- </nav> -->
+  <!-- dashboard -->
+   <div class="container-fluid">
+       <div class="row mt-3">
+         <div class="col-lg-3 col-md-3">
+            <div class="list-group ">
+                 
+                <div class="list-group-item active">Employee data</div>
+                <a href="#" class="list-group-item" data-bs-toggle="modal" data-bs-target="#add_employee">Add employee</a>
+                <a href="employees-list.html" class="list-group-item">View all employees</a>
+
+             </div>
+         </div>
+         <div class="col-lg-9 col-md-9">
+             <table class="table table-striped table-hover bg-light">
+                 <tr class="table-dark ">
+                     <th>ID</th>
+                     <th>Name</th>
+                     <th>email id</th>
+                     <th>details</th>
+                     <th>edit</th>
+                     <th>Delete</th>
+                 </tr>
+                 <tr>
+                     <td>1</td>
+                     <td>john doe</td>
+                     <td>johndoe@gmail.com</td>
+                     <td><a href="#" data-bs-toggle="modal" data-bs-target="#employee_details1"class="btn btn-block btn-sm  btn-info">Details</a></td>
+                     <td><a href="#" data-bs-toggle="modal" data-bs-target="#employee_edit_details1"class="btn btn-block btn-sm  btn-warning">edit</a></td>
+                     <td><a href="#" class="btn btn-block btn-sm  btn-danger" onclick="confirm('are u sure \'john doe\' ?');">  Delete</a></td>
+                 </tr>
+                 <tr>
+                    <td>1</td>
+                    <td>john doe</td>
+                    <td>johndoe@gmail.com</td>
+                    <td><a href="#"data-bs-toggle="modal" data-bs-target="#employee_details1 "class="btn btn-block btn-sm  btn-info">Details</a></td>
+                    <td><a href="#" class="btn btn-block btn-sm  btn-warning">edit</a></td>
+                    <td><a href="#" class="btn btn-block btn-sm  btn-danger">Delete</a></td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>john doe</td>
+                    <td>johndoe@gmail.com</td>
+                    <td><a href="#"data-bs-toggle="modal" data-bs-target="#employee-details1" class="btn btn-block btn-sm  btn-info">Details</a></td>
+                    <td><a href="#" class="btn btn-block btn-sm  btn-warning">edit</a></td>
+                    <td><a href="#" class="btn btn-block btn-sm  btn-danger">Delete</a></td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>john doe</td>
+                    <td>johndoe@gmail.com</td>
+                    <td><a href="#" data-bs-toggle="modal" data-bs-target="#employee-details1"class="btn btn-block btn-sm  btn-info">Details</a></td>
+                    <td><a href="#" class="btn btn-block btn-sm  btn-warning">edit</a></td>
+                    <td><a href="#" class="btn btn-block btn-sm  btn-danger">Delete</a></td>
+                </tr>
+             </table>
+         </div>
+
+
+
+         
+       </div>
+   </div>
+  <!-- dashboard -->
+  <!-- Button trigger modal -->
+
+<!-- add employee Modal -->
+<div class="modal fade" id="add_employee" tabindex="-1" aria-labelledby="add_employee" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add employee details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+       <form >
+        <div class="mb-3">
+          <input type="date" class="form-control form-control-sm"Required>
+        </div>
+         <div class="mb-3">
+           <input type="text" class="form-control form-control-sm"placeholder="Employee name"Required>
+         </div>
+         <div class="mb-3">
+          <input type="email" class="form-control form-control-sm"placeholder="Employee email id"Required>
+        </div>
+        <div class="mb-3">
+          <input type="tel" class="form-control form-control-sm"placeholder="Employee telephone number"Required>
+        </div>
+        <div class="mb-3">
+          <select class="form-control form-control-sm">
+            <option value="graphic designer">Graphic designer</option>
+          <option value="Web designer">Web designer</option>
+          <option value="Web developer">Web developer</option>
+          </select>
+          <div class="mb-3 mt-1">
+            <button type="submit" class="btn btn-sm btn-success btn-block">Add new employee</button>
+          </div>
+          
+        </div>
+         
+       </form>
+      </div>
+      
+    </div>
+  </div>
+</div>
+   
+<!-- details modal -->
+   <div class="modal fade" id="employee_details1" tabindex="-1" aria-labelledby="employee_details1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">employee details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+     
+      <TABLE class="TABLE TABLE-BORDER"> 
+        <tr>
+          <th>ID</th>
+          <TD>1 </TD>
+        </tr>
+        <tr>
+          <th>joining date</th>
+          <TD>29 july 2020</TD>
+        </tr>
+      
+      
+      <tr>
+        <th>name</th>
+        <TD>john doe</TD>
+      </tr>
+    
+    <tr>
+      <th>email id</th>
+      <TD>johndoe@gmail.com</TD>
+    </tr>
+ 
+  <tr>
+    <th>phone</th>
+    <TD>+91 20293939</TD>
+  </tr>
+  <tr>
+    <th>job</th>
+    <TD>web designer </TD>
+  </tr>
+
+</TABLE>
+      
+      
+    </div>
+  </div>
+</div>
+   <!-- edit employee details -->
+   <div class="modal fade" id="employee_edit_details1" tabindex="-1" aria-labelledby="add_employee" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add employee details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+         <form >
+          <div class="mb-3">
+            <input type="tect" class="form-control form-control-sm " value="12-08-2020" Required>
+          </div>
+           <div class="mb-3">
+             <input type="text" class="form-control form-control-sm" value="john doe"Required>
+           </div>
+           <div class="mb-3">
+            <input type="email" class="form-control form-control-sm"value="johndoe@gmail.com"Required>
+          </div>
+          <div class="mb-3">
+            <input type="tel" class="form-control form-control-sm" value="8076748948"Required>
+          </div>
+          <div class="mb-3">
+            <input type="tel" class="form-control form-control-sm" value="graphic designer"Required>
+           
+            <div class="mb-3 mt-1">
+              <button type="submit" class="btn btn-sm btn-success btn-block">update employee</button>
+            </div>
+            
+          </div>
+           
+         </form>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+ 
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
